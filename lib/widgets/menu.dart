@@ -13,7 +13,7 @@ class _MenuState extends State<Menu> {
     return Drawer(
       child: ListView(
         padding: EdgeInsets.zero,
-        children: const <Widget>[
+        children: <Widget>[
           DrawerHeader(
             decoration: BoxDecoration(
               color: Colors.blue,
@@ -27,16 +27,28 @@ class _MenuState extends State<Menu> {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.message),
-            title: Text('Messages'),
+            leading: Icon(Icons.home),
+            title: Text('Home'),
+            onTap: () {
+              Navigator.of(context, rootNavigator: true).pushNamedAndRemoveUntil('/', (route) => false);
+            },
+            selected: ModalRoute.of(context)!.settings.name == '/' ? true : false ,
           ),
           ListTile(
             leading: Icon(Icons.account_circle),
             title: Text('Profile'),
+            onTap: () {
+              Navigator.of(context, rootNavigator: true).pushNamedAndRemoveUntil('/profile', (route) => false);
+            },
+            selected: ModalRoute.of(context)!.settings.name == '/profile' ? true : false ,
           ),
           ListTile(
             leading: Icon(Icons.settings),
             title: Text('Settings'),
+            onTap: () {
+              Navigator.of(context, rootNavigator: true).pushNamedAndRemoveUntil('/setting', (route) => false);
+            },
+            selected: ModalRoute.of(context)!.settings.name == '/setting' ? true : false ,
           ),
         ],
       ),

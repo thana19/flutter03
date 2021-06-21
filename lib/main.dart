@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter03/pages/HomePage.dart';
-import 'package:flutter03/pages/MyHomePage.dart';
+import 'package:flutter03/pages/ProfilePage.dart';
+import 'package:flutter03/pages/SettingPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(title: 'Flutter Demo Home Page'),
       initialRoute: '/',
       routes: {
-        '/' : (context) => HomePage()
+        '/' : (context) => HomePage(),
+        '/profile' : (context) => ProfilePage(),
+        '/setting' : (context) => SettingPage(),
       },
     );
   }
